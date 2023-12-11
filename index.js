@@ -13,7 +13,11 @@ app.use(express.json());
 
 mongoose.connect('mongodb://127.0.0.1:27017/userDatabase');
 
-app.post('/api/register', async (req, res) => {
+app.get('/', (req,res)=>{
+    res.send("Hello World");
+});
+
+app.post('/register', async (req, res) => {
     console.log(req.body);
     try {
         const newPassword = await bcrypt.hash(req.body.password, 10);
@@ -28,7 +32,7 @@ app.post('/api/register', async (req, res) => {
     }
 });
 
-app.post('/api/login', async (req, res) => {
+app.post('/login', async (req, res) => {
     const user = await User.findOne({
         email: req.body.email,
     });
