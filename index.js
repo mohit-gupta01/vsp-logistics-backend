@@ -1,5 +1,5 @@
 const express = require('express');
-const cors = require('cors');
+// const cors = require('cors');
 // const mongoose = require('mongoose');
 // const User = require('./models/user.model');
 // const jwt = require('jsonwebtoken');
@@ -14,7 +14,7 @@ app.use(express.json());
 // mongoose.connect('mongodb://127.0.0.1:27017/userDatabase');
 
 app.get('/', (req, res) => {
-    res.send("Hello World");
+    res.send("Hello Mohit");
 });
 
 // app.post('/register', async (req, res) => {
